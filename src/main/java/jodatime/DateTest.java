@@ -1,5 +1,6 @@
 package jodatime;
 
+import org.joda.time.DateMidnight;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeUtils;
 import org.joda.time.LocalDate;
@@ -40,4 +41,31 @@ public class DateTest {
         System.out.println(after);
         System.out.println(before);
     }
+
+    @Test
+    public void TestDayOfMonth() {
+        DateTime dateTime = new DateTime();
+        DateTime.Property dayOfMonth = dateTime.dayOfMonth();
+
+        System.out.println(dayOfMonth.get());
+        System.out.println(dateTime.getDayOfMonth());
+    }
+
+
+    @Test
+    public void TestWithDayOfWeek() {
+        DateTime dateTime = new DateTime();
+        DateTime withDayOfWeek1 = dateTime.withDayOfWeek(1);
+        DateTime withDayOfWeek7 = dateTime.withDayOfWeek(7);
+
+
+        System.out.println(withDayOfWeek1);
+        System.out.println( withDayOfWeek1.withTimeAtStartOfDay());
+        System.out.println( withDayOfWeek1.withTime(0,0,0,0));
+        System.out.println( withDayOfWeek7.withTime(23,59,59,3));
+
+    }
+
+
+
 }

@@ -4,11 +4,13 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.asm.Type;
 import com.alibaba.fastjson.serializer.DoubleSerializer;
 import com.alibaba.fastjson.serializer.SerializeConfig;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -145,5 +147,27 @@ public class StringTest {
         System.out.println("4==="+Arrays.asList(a.split("_",3)));
 
 
+    }
+
+
+    @Test
+    public void blankTest() {
+        String a = " ";
+        System.out.println(StringUtils.isNotBlank(a));
+        System.out.println(StringUtils.isNotEmpty(a));
+
+
+    }
+
+    @Test
+    public void test2() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(scanner.nextLine());
+    }
+
+    private static String readDataFromConsole(String prompt) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(prompt);
+        return scanner.nextLine();
     }
 }

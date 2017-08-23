@@ -74,7 +74,17 @@ public class MD5 {
 
 //		String s =
 
+		String pwdStr = "123456";
+		String crypt = crypt(pwdStr);
+//		System.out.println(crypt);
 
+		String before ="xlh";
+		String after = "fs";
+		crypt = crypt(before+crypt+after);
+
+		System.out.println(crypt);
 	}
+
+
 
 }

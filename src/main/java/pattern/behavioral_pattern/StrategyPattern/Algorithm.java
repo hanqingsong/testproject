@@ -1,4 +1,4 @@
-package pattern.StrategyPattern;
+package pattern.behavioral_pattern.StrategyPattern;
 
 /**
  * Created by hanqingsong on 17/7/6.

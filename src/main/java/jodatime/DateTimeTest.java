@@ -148,4 +148,5 @@ public class DateTimeTest {
 		System.out.println(dateTime.getDayOfWeek());
 		System.out.println(dateTime.getWeekOfWeekyear());
 	}
+
 }

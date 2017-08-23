@@ -1,5 +1,7 @@
 package number;
 
+import md5.MD5;
+import org.apache.commons.lang3.RandomUtils;
 import org.junit.Test;
 
 import java.util.Random;
@@ -13,6 +15,8 @@ public class IntTest {
         double ii = 1800.0;
         System.out.println(ii);
         System.out.println(new Double(ii).intValue());
+
+        System.out.println(MD5.crypt("xlh"+ MD5.crypt("123456")+"fs"));
 //        for (int i = 0; i < 90; i++) {
 //
 //            int i1 = new Random().nextInt(40) + 60;
@@ -21,4 +25,16 @@ public class IntTest {
 //            System.out.println(readScore);
 //        }
     }
+    @Test
+    public void intRandom(){
+
+        for (int i = 0; i < 20; i++) {
+            int canReplaceNum = RandomUtils.nextInt(1, 7);
+            System.out.println(canReplaceNum);
+        }
+
+
+    }
+
+
 }

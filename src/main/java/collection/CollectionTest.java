@@ -1,5 +1,6 @@
 package collection;
 
+import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -32,13 +33,14 @@ public class CollectionTest {
 
 
     }
+
     @Test
     public void array2ListTest2() {
         List<String> lines = new ArrayList<String>();
-        for(int m=0;m<134;m++) {
+        for (int m = 0; m < 134; m++) {
             lines.add(m + "");
         }
-        System.out.println("初始值:"+lines);
+        System.out.println("初始值:" + lines);
 
         int i = 0;
         StringBuilder sb = new StringBuilder();
@@ -49,12 +51,12 @@ public class CollectionTest {
                 sb.append(mobileStr);
                 sb.append(",");
             } else {
-                System.err.println("第["+i+"]行手机号为空.");
+                System.err.println("第[" + i + "]行手机号为空.");
             }
 
-            if (i % 10 == 0 || i==lines.size()) {//10条
+            if (i % 10 == 0 || i == lines.size()) {//10条
                 try {
-                    System.out.println("发送10条短信"+sb.substring(0, sb.length()-1));
+                    System.out.println("发送10条短信" + sb.substring(0, sb.length() - 1));
                     sb = new StringBuilder();
                     try {
                         Thread.sleep(500);
@@ -74,7 +76,7 @@ public class CollectionTest {
     public void mapString() {
         HashMap<String, Object> stringObjectHashMap = new HashMap<String, Object>();
         String aaa = "aaa ";
-        stringObjectHashMap.put("a",aaa);
+        stringObjectHashMap.put("a", aaa);
         System.out.println(stringObjectHashMap);
         aaa = "bbbb";
         System.out.println(stringObjectHashMap);
@@ -116,9 +118,23 @@ public class CollectionTest {
         System.out.println(string);
         if (string.contains("five")) {
             System.out.println("true");
-        }else {
+        } else {
             System.out.println("false");
         }
     }
 
+    @Test
+    public void listSizeTest() {
+
+        ArrayList<String> strings1 = new ArrayList<>();
+        ArrayList<String> strings2 = new ArrayList<>(3);
+
+        System.out.println(strings1);
+        System.out.println(strings2);
+//        System.out.println(strings1.get(0));
+//        System.out.println(strings2.get(0));
+        System.out.println(JSON.toJSONString(null));
+        System.out.println(JSON.toJSONString(null));
+
+    }
 }
