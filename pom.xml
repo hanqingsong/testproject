@@ -105,7 +105,12 @@
           <version>6.9.10</version>
       </dependency>
 
-
+      <!--编译生成通用的方法-->
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.16.18</version>
+      </dependency>
 
   </dependencies>
 
