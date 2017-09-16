@@ -35,6 +35,19 @@ public class IntTest {
 
 
     }
+    @Test
+    public void intQuyu(){
+        int c = 0;
+        for (int i = 0; i < 8; i++) {
+            int yy = c%8;
+            System.out.println(c+"%8="+yy);
+            c++;
+        }
+
+
+    }
+
+
 
 
 }

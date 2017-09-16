@@ -137,4 +137,14 @@ public class CollectionTest {
         System.out.println(JSON.toJSONString(null));
 
     }
+
+    @Test
+    public void listStringTreeMap() {
+        Map<String, Object> hashMap = new LinkedHashMap<>();
+        hashMap.put("usertoken", "353f35d1b2504332962c460bf59779a0");
+        hashMap.put("lessonLid","70887786da0b43eb8f7d43529e6051d2" );
+        System.out.println(JSON.toJSONString(hashMap));
+        hashMap = new TreeMap<>(hashMap);
+        System.out.println(JSON.toJSONString(hashMap));
+    }
 }

@@ -144,7 +144,19 @@ public class DateTimeTest {
 
 	@Test
 	public void dayWeek() {
-		DateTime dateTime = new DateTime().plusDays(1);
+		DateTime dateTime = new DateTime();
+		System.out.println(dateTime.getDayOfWeek());
+		System.out.println(dateTime.getWeekOfWeekyear());
+	}
+
+	@Test
+	public void dateOfNextWeek() {
+		DateTime dateTime = new DateTime();
+		dateTime = dateTime.plusWeeks(1);
+		System.out.println(dateTime.weekOfWeekyear().getDateTime());
+//		System.out.println(dateTime.weekOfWeekyear().addToCopy(1));
+		System.out.println(dateTime.weekOfWeekyear().roundFloorCopy());
+		System.out.println(dateTime.weekOfWeekyear().roundCeilingCopy());
 		System.out.println(dateTime.getDayOfWeek());
 		System.out.println(dateTime.getWeekOfWeekyear());
 	}
