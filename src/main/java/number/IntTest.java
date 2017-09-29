@@ -47,6 +47,16 @@ public class IntTest {
 
     }
 
+    @Test
+    public void InterStrEqual(){
+        Integer i = 10;
+        String s = "10";
+        System.out.println(i.toString().equals(s));
+
+
+    }
+
+
 
 
 
