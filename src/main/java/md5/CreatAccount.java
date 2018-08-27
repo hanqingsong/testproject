@@ -13,15 +13,17 @@ import java.util.List;
  */
 public class CreatAccount {
     public static void main(String[] args) {
-        String username= "13601295983"; //18614072846
+        String username= "18600017155"; //18614072846
         String pwd = username.substring(7);//后四位密码
 
         List<String> userNameList = new ArrayList<String>();
-
-        for(int i = 0 ;i<=5;i++) {
+        int count = 0;
+        for(int i = 0 ;i<=count;i++) {
             StringBuffer sb = new StringBuffer(username);
-            sb = sb.replace(1, 2, 2+"");//修改第2位
-            username = sb.replace(3, 4, i+"").toString();//2 3修改第3位
+            int replace2Num = 2;
+            int replaceOrderNum = 4;
+            sb = sb.replace(replace2Num-1, replace2Num, 2+"");//修改第2位
+            username = sb.replace(replaceOrderNum-1, replaceOrderNum, i+"").toString();//2 3修改第3位
             String userlid = UUIDGenerator.generate();
             String token = UUIDGenerator.generate();
             String pwdCrypt = MD5.crypt(pwd);

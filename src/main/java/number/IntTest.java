@@ -40,7 +40,11 @@ public class IntTest {
         int c = 0;
         for (int i = 0; i < 8; i++) {
             int yy = c%8;
-            System.out.println(c+"%8="+yy);
+            int i1 = new Random().nextInt(7);
+            Integer canReplaceNum = RandomUtils.nextInt(1, 6 + 1);
+            System.out.println("i1= "+i1);
+            System.out.println("canReplaceNum= "+canReplaceNum);
+//            System.out.println(c+"%8="+yy);
             c++;
         }
 

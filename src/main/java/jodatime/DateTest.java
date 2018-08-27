@@ -31,6 +31,16 @@ public class DateTest {
         System.out.println(dateTimeNow.withTime(23,59,59,59));
 
     }
+    @Test
+    public void timeNew() {
+        DateTime dateTimeNow = new DateTime(1525780636);
+        System.out.println(dateTimeNow);
+        DateTime dateTimeNow2 = new DateTime(1525780636*1000);
+        System.out.println(dateTimeNow2);
+
+
+    }
+
 
     @Test
     public void TestAfterBefore() {

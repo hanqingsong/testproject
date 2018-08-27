@@ -2,8 +2,10 @@ package jodatime;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.Days;
 import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
@@ -81,7 +83,7 @@ public class DateTimeTest {
 	}
 
 	static boolean isBefore(){// 现在 isbefore 明天 true
-		boolean before = new DateTime().isBefore(new DateTime().plus(1).toDate().getTime());
+		boolean before = new DateTime().isBefore(new DateTime().plus(1));
 		System.out.println(before);
 		return before;
 	}
@@ -145,6 +147,7 @@ public class DateTimeTest {
 	@Test
 	public void dayWeek() {
 		DateTime dateTime = new DateTime();
+		System.out.println(dateTime.toString("yyyy-MM-dd"));
 		System.out.println(dateTime.getDayOfWeek());
 		System.out.println(dateTime.getWeekOfWeekyear());
 	}
@@ -159,6 +162,39 @@ public class DateTimeTest {
 		System.out.println(dateTime.weekOfWeekyear().roundCeilingCopy());
 		System.out.println(dateTime.getDayOfWeek());
 		System.out.println(dateTime.getWeekOfWeekyear());
+	}
+	@Test
+	public void nowBettweansTommrow(){
+		DateTime now = new DateTime();//当前时间
+		DateTime tomorrowDt = now.plusDays(1);//明天
+
+		int days = Days.daysBetween(now, tomorrowDt).getDays();
+		System.out.println(days);//1
+	}
+
+	@Test
+	public void testMonthPlus(){
+		DateTime now = new DateTime(2017,1,31,0,0,0);//当前时间
+		System.out.println(now);//1
+		// now = now.plusDays(29);
+		now = now.plusMonths(1);
+		System.out.println(now);
+	}
+
+	@Test
+	public void testMonthGet(){
+		DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss");
+		DateTime startTime = DateTime.parse("2018-07-10 00:00:00", formatter);
+		System.out.println(startTime.toString(DateTimeFormat.forPattern("M").withLocale(Locale.ENGLISH)));
+		System.out.println(startTime.toString(DateTimeFormat.forPattern("MM").withLocale(Locale.ENGLISH)));
+		System.out.println(startTime.toString(DateTimeFormat.forPattern("MMM").withLocale(Locale.ENGLISH)));
+		System.out.println(startTime.toString(DateTimeFormat.forPattern("MMMM").withLocale(Locale.ENGLISH)));
+		DateTime endTime = DateTime.parse("2018-08-09 23:59:59", DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss"));
+		System.out.println(endTime.toString(DateTimeFormat.forPattern("M").withLocale(Locale.ENGLISH)));
+		System.out.println(endTime.toString(DateTimeFormat.forPattern("MM").withLocale(Locale.ENGLISH)));
+		System.out.println(endTime.toString(DateTimeFormat.forPattern("MMM").withLocale(Locale.ENGLISH)));
+		System.out.println(endTime.toString(DateTimeFormat.forPattern("MMMM").withLocale(Locale.ENGLISH)));
+
 	}
 
 }

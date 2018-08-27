@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.regex.Pattern;
 
 /**
  * Created by hanqingsong on 16/7/6.
@@ -146,9 +147,17 @@ public class StringTest {
         System.out.println("3==="+Arrays.asList(a.split("_",2)));
         System.out.println("4==="+Arrays.asList(a.split("_",3)));
 
+        String token = new String("aaaaaaa");
+        test1(token);
+        token = new String("bbbbbb");
+        test1(token);
 
     }
 
+    private void test1(String token){
+        final String aaa = token;
+        System.out.println(aaa);
+    }
 
     @Test
     public void blankTest() {
@@ -169,5 +178,14 @@ public class StringTest {
         Scanner scanner = new Scanner(System.in);
         System.out.print(prompt);
         return scanner.nextLine();
+    }
+
+    @Test
+    public  void regTest(){
+        System.out.println(Pattern.matches("^([\\w-_]+(?:\\.[\\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\\.[a-z]{2,6})$", "aaa@fastschool.cn"));
+        System.out.println(Pattern.matches("^([\\w-_]+(?:\\.[\\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\\.[a-z]{2,6})$", ""));
+        // System.out.println(Pattern.matches("^([\\w-_]+(?:\\.[\\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\\.[a-z]{2,6})$", null)); 空异常
+        System.out.println(Pattern.matches("^([\\w-_]+(?:\\.[\\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\\.[a-z]{2,6})$", "aaa@fastschool,cn"));
+        System.out.println(Pattern.matches("^([\\w-_]+(?:\\.[\\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\\.[a-z]{2,6})$", "aaa@fastschool.con"));
     }
 }
