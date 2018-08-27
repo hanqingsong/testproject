@@ -45,12 +45,17 @@ public class SelectionSort {
 
             temp = dataArr.get(i);
             Integer minData = dataArr.get(minIndex);
-            System.out.print("最小数：【" + minData + "】和【" + temp + "】交换");
 
-            dataArr.set(i, minData);
-            dataArr.set(minIndex, temp);
+            System.out.print("最小数：【" + minData + "】和【" + temp + "】");
+            // 如果找到最小的数和当前的数不相等
+            if (temp != minData) {
+                dataArr.set(i, minData);
+                dataArr.set(minIndex, temp);
 
-            System.out.println(" 交换之后数组 " + dataArr);
+                System.out.println("交换, 交换之后数组 " + dataArr);
+            }else {
+                System.out.println("相等不交换 " + dataArr);
+            }
         }
         System.out.println("排序后数组："+ dataArr);
     }
