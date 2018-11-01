@@ -188,4 +188,23 @@ public class StringTest {
         System.out.println(Pattern.matches("^([\\w-_]+(?:\\.[\\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\\.[a-z]{2,6})$", "aaa@fastschool,cn"));
         System.out.println(Pattern.matches("^([\\w-_]+(?:\\.[\\w-_]+)*)@((?:[a-z0-9]+(?:-[a-zA-Z0-9]+)*)+\\.[a-z]{2,6})$", "aaa@fastschool.con"));
     }
+
+    @Test
+    public void equalTest(){
+        String s1 = "abc";
+        String s2 = "abc";
+
+        // System.out.println(s1 == s2);
+        // System.out.println("s1 == s2 is:" + s1 == s2);
+
+        String s11 = new String("1")+new String("1");
+        // String s11 = "1"+"1";
+        // String s11 = new String("11");
+        String s13 = s11.intern();
+        String s12 = "11";
+        // s12.intern();
+        System.out.println(s11 == s12);
+
+
+    }
 }

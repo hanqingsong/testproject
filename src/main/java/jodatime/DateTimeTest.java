@@ -81,11 +81,10 @@ public class DateTimeTest {
 		int years = Years.yearsBetween(tryEndTime, now).getYears();
 		System.out.println(years);
 	}
-
-	static boolean isBefore(){// 现在 isbefore 明天 true
+	@Test
+	public void isBefore(){// 现在 isbefore 明天 true
 		boolean before = new DateTime().isBefore(new DateTime().plus(1));
 		System.out.println(before);
-		return before;
 	}
 
 	static void paser() {

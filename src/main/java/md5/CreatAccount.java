@@ -13,11 +13,11 @@ import java.util.List;
  */
 public class CreatAccount {
     public static void main(String[] args) {
-        String username= "18600017155"; //18614072846
+        String username= "18614084016"; //18614072846
         String pwd = username.substring(7);//后四位密码
 
         List<String> userNameList = new ArrayList<String>();
-        int count = 0;
+        int count = 9;
         for(int i = 0 ;i<=count;i++) {
             StringBuffer sb = new StringBuffer(username);
             int replace2Num = 2;
