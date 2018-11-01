@@ -19,6 +19,9 @@ public class StringTestTest {
         System.out.println(s11 == s12);
         System.out.println(s11 == s13);
         System.out.println(s12 == s13);
+
+        String x2 = new StringBuilder().append("bbb").toString();
+        System.out.println(x2.intern() == x2);
     }
 
     public static void main(String[] args) {

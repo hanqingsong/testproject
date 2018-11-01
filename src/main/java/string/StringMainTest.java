@@ -32,6 +32,12 @@ public class StringMainTest {
         System.out.println(s11 == s12);
         System.out.println(s11 == s13);
         System.out.println(s12 == s13);
+
+
+        String x2 = new StringBuilder().append("Stringaaa").append("Testaaa").toString();
+        System.out.println(x2.intern() == x2);
+        String x3 = new String("Stringbbb");
+        System.out.println(x3.intern() == x3);
     }
 
 }
