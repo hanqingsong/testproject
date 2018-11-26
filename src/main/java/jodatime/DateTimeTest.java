@@ -7,6 +7,8 @@ import java.util.Locale;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.Days;
+import org.joda.time.Interval;
+import org.joda.time.Period;
 import org.joda.time.Years;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -109,6 +111,28 @@ public class DateTimeTest {
 		System.out.println(dateTime);
 		System.out.println(dateTime2);
 	}
+
+	/**
+	 * 时间差，几年几个月
+	 */
+
+	@Test
+	public void intervalDate(){
+
+		long birthdayValue = DateTime.parse("2017-06-07 00:00:00", DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")).toDate().getTime();
+		if (birthdayValue > 0) {
+			Interval interval = new Interval(birthdayValue, DateTime.now().getMillis());
+			// Interval interval = new Interval( DateTime.now().getMillis(),birthdayValue);// error
+			Period period = interval.toPeriod();
+			int years = period.getYears();
+			System.out.println(years);
+			int months = period.getMonths();
+			System.out.println(months);
+			String birthdayDesc = new StringBuilder().append(years).append("岁").append(months).append("个月").toString();
+			System.out.println(birthdayDesc);
+		}
+	}
+
 	
 	static void isSun(){
 		int addDays = 2;
@@ -195,5 +219,7 @@ public class DateTimeTest {
 		System.out.println(endTime.toString(DateTimeFormat.forPattern("MMMM").withLocale(Locale.ENGLISH)));
 
 	}
+
+
 
 }
