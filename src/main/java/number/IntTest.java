@@ -53,12 +53,15 @@ public class IntTest {
 
     }
 
+    /**
+     * 数值和字符串比较是相等的
+     * 底层使用字符串转char数组比较，比较的是字符值
+     */
     @Test
     public void InterStrEqual() {
         Integer i = 10;
         String s = "10";
         System.out.println(i.toString().equals(s));
-
 
     }
 
@@ -79,5 +82,22 @@ public class IntTest {
         System.out.println(index2);
     }
 
+
+    /**
+     * 所有的包装类对象之间值的比较，全部使用equals方法比较。
+     * 说明：对于Integer var=?在-128至127之间的赋值，Integer对象是在IntegerCache.cache产生，会复用已有对象，
+     * 这个区间内的Integer值可以直接使用==进行判断，但是这个区间之外的所有数据，都会在堆上产生，
+     * 并不会复用已有对象，这是一个大坑，推荐使用equals方法进行判断
+     */
+    @Test
+    public void intEqualTest(){
+        Integer i1=1;
+        Integer i2=1;
+        Integer i3=1000;
+        Integer i4=1000;
+
+        System.out.println(i1==i2);
+        System.out.println(i3==i4);
+    }
 
 }
