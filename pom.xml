@@ -137,6 +137,13 @@
           <artifactId>netty</artifactId>
           <version>3.10.5.Final</version>
       </dependency>
+
+      <!--hutool-->
+      <dependency>
+          <groupId>cn.hutool</groupId>
+          <artifactId>hutool-all</artifactId>
+          <version>4.3.1</version>
+      </dependency>
   </dependencies>
 
   <build>
