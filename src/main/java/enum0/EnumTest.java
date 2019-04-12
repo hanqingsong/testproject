@@ -15,5 +15,7 @@ public class EnumTest {
         System.out.println(sunday);
         System.out.println(sunday.name());
         System.out.println(sunday.ordinal());
+        Day sunday2 = Day.SUNDAY;
+        Day monday = Day.MONDAY;
     }
 }

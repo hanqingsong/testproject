@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class CreatAccount {
     public static void main(String[] args) {
-        String username= "18614084016"; //18614072846
+        String username= "18801107603"; //18614072846
         String pwd = username.substring(7);//后四位密码
 
         List<String> userNameList = new ArrayList<String>();
