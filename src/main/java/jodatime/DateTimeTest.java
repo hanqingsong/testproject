@@ -171,6 +171,7 @@ public class DateTimeTest {
 	public void dayWeek() {
 		DateTime dateTime = new DateTime();
 		System.out.println(dateTime.toString("yyyy-MM-dd"));
+		System.out.println(dateTime.toString("yyyy-M-d"));
 		System.out.println(dateTime.getDayOfWeek());
 		System.out.println(dateTime.getWeekOfWeekyear());
 	}
@@ -199,6 +200,8 @@ public class DateTimeTest {
 	public void testMonthPlus(){
 		DateTime now = new DateTime(2017,1,31,0,0,0);//当前时间
 		System.out.println(now);//1
+		System.out.println(now.isBeforeNow());//1
+
 		// now = now.plusDays(29);
 		now = now.plusMonths(1);
 		System.out.println(now);
@@ -218,6 +221,12 @@ public class DateTimeTest {
 		System.out.println(endTime.toString(DateTimeFormat.forPattern("MMM").withLocale(Locale.ENGLISH)));
 		System.out.println(endTime.toString(DateTimeFormat.forPattern("MMMM").withLocale(Locale.ENGLISH)));
 
+	}
+
+	@Test
+	public void testPeriod(){
+		TimePeriodEnum currentPeriodStartTime = TimePeriodEnum.getCurrentPeriodStartTime(DateTime.now());
+		System.out.println(currentPeriodStartTime);
 	}
 
 

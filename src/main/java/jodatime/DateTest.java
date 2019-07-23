@@ -28,6 +28,7 @@ public class DateTest {
     public void timeEndDay() {
         DateTime dateTimeNow = new DateTime();
         System.out.println(dateTimeNow.withTimeAtStartOfDay());
+        System.out.println(dateTimeNow.toDateMidnight());
         System.out.println(dateTimeNow.withTime(23,59,59,59));
 
     }
