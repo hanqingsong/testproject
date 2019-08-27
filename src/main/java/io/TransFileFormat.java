@@ -22,10 +22,10 @@ import java.util.regex.Pattern;
 public class TransFileFormat {
     @Test
     public void printTabToLine() {
-        FileReader fileReader = new FileReader("/Users/hanqingsong/Desktop/区块链目录.txt");
+        FileReader fileReader = new FileReader("/Users/hanqingsong/Desktop/Spring源码深度解析.txt");
         List<String> strings = fileReader.readLines();
         if (CollectionUtils.isNotEmpty(strings)) {
-            FileWriter fileWriter = FileWriter.create(new File("/Users/hanqingsong/Desktop/区块链目录2.txt"));
+            FileWriter fileWriter = FileWriter.create(new File("/Users/hanqingsong/Desktop/Spring源码深度解析2.txt"));
             String patternStr = "(\\d?\\.\\d+)";
             Pattern pattern = Pattern.compile(patternStr);
             List<String> printStrings = Lists.newArrayList();

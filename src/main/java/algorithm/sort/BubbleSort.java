@@ -124,4 +124,29 @@ public class BubbleSort {
         System.out.println(Arrays.toString(arr));
     }
 
+    @Test
+    public void doBubbleOne() {
+        Integer[] arr = {1, 3, 5, 4};
+        new BubbleSort().bubbleOne(arr);
+    }
+    public void bubbleOne(Integer[] arr) {
+        for (int i = 0; i < arr.length-1; i++) {
+            boolean change = false;
+            for (int j = 0; j < arr.length- i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j+1]=temp;
+                    change=true;
+                }
+            }
+            System.out.println(Arrays.asList(arr));
+            if (!change) {
+                System.out.println("没有改变顺序，跳出");
+                break;
+            }
+        }
+        System.out.println(Arrays.asList(arr));
+    }
+
 }
