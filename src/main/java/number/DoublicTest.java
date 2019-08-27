@@ -1,5 +1,6 @@
 package number;
 
+import cn.hutool.core.convert.Convert;
 import org.junit.Test;
 
 /**
@@ -34,5 +35,12 @@ public class DoublicTest {
         Double incomeValue = 5d;
         incomeValue = 169 / 100 * incomeValue;
         System.out.println(incomeValue);
+    }
+
+    // 类型转换
+    @Test
+    public void convertDouble() {
+        Double aDouble = Convert.toDouble(200L);
+        System.out.println(aDouble);
     }
 }

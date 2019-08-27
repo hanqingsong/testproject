@@ -49,21 +49,21 @@ public class FunctionTest {
                 new Apple(155, "green"),
                 new Apple(120, "red"));
 
-        // List<Apple> red = filterApples(inventory, (Apple a) -> a.color.equals("red"));
+        List<Apple> red = filterApples(inventory, (Apple a) -> a.color.equals("red"));
 
 
         System.out.println("FunctionTest.testJava8");
     }
-    //
-    // public static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> p){
-    //     List<Apple> result = new ArrayList<>();
-    //     for(Apple apple : inventory){
-    //         if(p.test(apple)){
-    //             result.add(apple);
-    //         }
-    //     }
-    //     return result;
-    // }
+
+    public static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> p){
+        List<Apple> result = new ArrayList<>();
+        for(Apple apple : inventory){
+            if(p.test(apple)){
+                result.add(apple);
+            }
+        }
+        return result;
+    }
 
     public static class Apple {
         private int weight = 0;

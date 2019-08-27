@@ -23,6 +23,13 @@ public class StringTestTest {
         String x2 = new StringBuilder().append("bbb").toString();
         System.out.println(x2.intern() == x2);
     }
+    @Test
+    public void stringBuffer(){
+        String nickName = "一二三四五六七八九十十一十二";
+        StringBuffer stringBuffer = new StringBuffer(nickName);
+        nickName = stringBuffer.replace(8, nickName.length(), "...").toString();
+        System.out.printf(nickName);
+    }
 
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(StringTestTest.class);
