@@ -151,6 +151,18 @@
           <artifactId>mockito-all</artifactId>
           <version>1.10.19</version>
       </dependency>
+        <!--dozer-->
+      <dependency>
+          <groupId>net.sf.dozer</groupId>
+          <artifactId>dozer</artifactId>
+          <version>5.5.1</version>
+      </dependency>
+      <!--easy-mapper-->
+      <dependency>
+          <groupId>com.baidu.unbiz</groupId>
+          <artifactId>easy-mapper</artifactId>
+          <version>1.0.4</version>
+      </dependency>
   </dependencies>
 
   <build>
