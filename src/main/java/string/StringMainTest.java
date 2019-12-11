@@ -29,9 +29,9 @@ public class StringMainTest {
         String s11 = new String("1")+new String("1");
         String s13 = s11.intern();
         String s12 = "11";
-        System.out.println(s11 == s12);
-        System.out.println(s11 == s13);
-        System.out.println(s12 == s13);
+        System.out.println(s11 == s12); // false
+        System.out.println(s11 == s13); // true
+        System.out.println(s12 == s13); // false
 
 
         String x2 = new StringBuilder().append("Stringaaa").append("Testaaa").toString();

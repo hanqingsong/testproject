@@ -23,12 +23,12 @@ public class StringTest {
     public void testPrint(){
         System.err.println("ddd");
     }
-    public static void main(String[] args) {
-//        testTrim();
-        doubleT();
-
-        isBoolean(null);
-    }
+//     public static void main(String[] args) {
+// //        testTrim();
+//         doubleT();
+//
+//         isBoolean(null);
+//     }
     public static void isBoolean (Boolean flag){
         if (flag) {
             System.out.printf("true");
@@ -206,5 +206,27 @@ public class StringTest {
         System.out.println(s11 == s12);
 
 
+    }
+
+    public static void main(String[] args) {
+        StringTest stringTest = new StringTest();
+        String string = stringTest.modifyString("int");
+        System.out.println(string);
+    }
+    public  String modifyString(String string){
+        int a = 3 , b = 0;
+        try {
+            a = a/b;
+            string = "a/b";
+            return string;
+        }catch (Exception e){
+            System.out.println("Exception");
+
+            return string;
+        }finally {
+            System.out.println("finally");
+            string = "finally";
+            // return string;
+        }
     }
 }
