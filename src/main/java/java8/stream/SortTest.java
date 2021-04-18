@@ -32,7 +32,7 @@ public class SortTest {
 
         // 广告 时间
         // 话题类型  参与人数 时间
-        articleList.sort(Comparator.comparing(Article::isAd).reversed()
+        articleList.sort(Comparator.comparing(Article::getAd).reversed()
                 .thenComparing(Comparator.comparingInt(Article::getSubtype).reversed())
                 .thenComparing(Comparator.comparingInt(Article::getJoinNum).reversed())
                 .thenComparing(Comparator.comparingInt(Article::getCreateTime).reversed()));
@@ -55,12 +55,4 @@ public class SortTest {
         // Article{articleId=1003, title='第三篇文章', views=9, comments=1, createTime=1548830880084}]
     }
 
-    @Data
-    @AllArgsConstructor
-    class Article {
-        private boolean ad;
-        private Integer subtype;
-        private Integer joinNum;
-        private Integer createTime;
-    }
 }

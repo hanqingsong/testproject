@@ -3,8 +3,10 @@ package java8.stream;
 import cn.hutool.core.collection.CollUtil;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.junit.Test;
 
+import javax.validation.constraints.NotNull;
 import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -70,15 +72,15 @@ public class ListStreamTest {
     }
     @Test
     public void mapToTest(){
-        User user1 = new User("a", 1,60.88);
-        User user2 = new User("b", 2,88.23);
-        ArrayList<User> users = CollUtil.newArrayList(user1,user2);
+        User2 user1 = new User2("a", 1, 60.88);
+        User2 user2 = new User2("b", 2, 88.23);
+        ArrayList<User2> users = CollUtil.newArrayList(user1,user2);
         List<Integer> list = users.stream()
                 .mapToInt(user -> user.getWeight().intValue()).boxed().collect(Collectors.toList());
-        List<String> collect = users.stream().map(User::getName).collect(Collectors.toList());
-        Map<String, User> collect1 = users.stream().collect(Collectors.toMap(User::getName, v -> v));
+        List<String> collect = users.stream().map(User2::getName).collect(Collectors.toList());
+        Map<String, User2> collect1 = users.stream().collect(Collectors.toMap(User2::getName, v -> v));
 
-        String string = users.stream().map(User::getName).collect(Collectors.joining(",")).toString();
+        String string = users.stream().map(User2::getName).collect(Collectors.joining(",")).toString();
         System.out.println(string);
         System.out.println(collect1);
         System.out.println(collect);
@@ -91,11 +93,40 @@ public class ListStreamTest {
     }
 
     @Data
-    @AllArgsConstructor
-    class User {
+    @NoArgsConstructor
+    static class User2 {
         private String name;
-        private int age;
+        private Integer age;
         private Double weight;
+        public User2(String name, Integer age, Double weight) {
+            this.name = name;
+            this.age = age;
+            this.weight = weight;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public Integer getAge() {
+            return age;
+        }
+
+        public void setAge(Integer age) {
+            this.age = age;
+        }
+
+        public Double getWeight() {
+            return weight;
+        }
+
+        public void setWeight(Double weight) {
+            this.weight = weight;
+        }
     }
 
     /**
