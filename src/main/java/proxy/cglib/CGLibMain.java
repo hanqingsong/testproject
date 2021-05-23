@@ -15,14 +15,14 @@ public class CGLibMain {
         helloProxy.say();
         System.out.println("===============");
 
-        // 优化：每次使用 Enhancer.create 比较麻烦，封装到DynamicProxy中
+        /*// 优化：每次使用 Enhancer.create 比较麻烦，封装到DynamicProxy中
         HelloNoInterface helloProxy2 = cgLibProxy.getProxy(HelloNoInterface.class);
         helloProxy2.say();
 
         System.out.println("===============");
         // 优化：使用单例模式获取对象
         HelloNoInterface helloProxy3 = CGLibProxy.getInstance().getProxy(HelloNoInterface.class);
-        helloProxy3.say();
+        helloProxy3.say();*/
 
     }
 }
