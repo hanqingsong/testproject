@@ -1,7 +1,5 @@
 package md5;
 
-import sun.applet.Main;
-import sun.jvm.hotspot.debugger.linux.LinuxDebugger;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
