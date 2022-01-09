@@ -200,6 +200,11 @@
           <artifactId>mapstruct-processor</artifactId>
           <version>1.4.2.Final</version>
       </dependency>
+      <dependency>
+          <groupId>com.google.protobuf</groupId>
+          <artifactId>protobuf-java</artifactId>
+          <version>3.14.0</version>
+      </dependency>
   </dependencies>
 
   <build>
