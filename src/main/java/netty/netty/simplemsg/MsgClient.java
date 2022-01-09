@@ -1,4 +1,4 @@
-package io.netty.simplemsg;
+package netty.netty.simplemsg;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
