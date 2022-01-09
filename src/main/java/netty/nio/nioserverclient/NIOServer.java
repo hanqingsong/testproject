@@ -32,7 +32,7 @@ public class NIOServer {
         // 循环等待客户端连接
         while (true) {
             // 等待一秒
-            if (selector.select(1000) == 0) {
+            if (selector.select() == 0) {
                 // 没有事件发生
                 System.out.println("服务器等待了1秒，没有连接");
                 continue;

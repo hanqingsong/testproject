@@ -1,4 +1,4 @@
-package netty.EchoServer;
+package netty.netty.simple.EchoServer;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
