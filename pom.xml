@@ -19,7 +19,7 @@
   <properties>
 		<spring.version>4.1.0.RELEASE</spring.version>
 		<!--<jackson.version>2.4.2</jackson.version>-->
-		<fastjson.version>1.2.4</fastjson.version>
+		<fastjson.version>1.2.83</fastjson.version>
 		<log4j.version>2.0.2</log4j.version>
 		<hibernate.version>4.3.5.Final</hibernate.version>
 		<fastjson.version>1.2.4</fastjson.version>
