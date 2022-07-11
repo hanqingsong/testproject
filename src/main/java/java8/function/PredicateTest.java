@@ -2,12 +2,9 @@ package java8.function;
 
 import org.junit.Test;
 
-import java.io.File;
-import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.IntToDoubleFunction;
 import java.util.function.Predicate;
 
 /**
@@ -16,7 +13,7 @@ import java.util.function.Predicate;
  * Predicate用于分配lambda表达式。functional interface是返回布尔值的test（T t）。
  * 当我们将对象传递给这个方法时，它将通过分配的lambda表达式来评估对象。
  */
-public class FunctionTest {
+public class PredicateTest {
 
     @Test
     public void testOldHidden() {

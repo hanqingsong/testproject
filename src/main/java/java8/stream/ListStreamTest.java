@@ -13,6 +13,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.toList;
+
 /**
  * @Description
  * @Author hanqingsong
@@ -38,7 +40,7 @@ public class ListStreamTest {
             System.out.println(s);
             return true;
         });
-        Collector<Object, ?, List<Object>> objectListCollector = Collectors.toList();
+        Collector<Object, ?, List<Object>> objectListCollector = toList();
     }
 
     /**
@@ -66,7 +68,7 @@ public class ListStreamTest {
                         i=1;
                     }
                     return i;
-                }).collect(Collectors.toList());
+                }).collect(toList());
         System.out.println(list);
 
     }
@@ -76,8 +78,8 @@ public class ListStreamTest {
         User2 user2 = new User2("b", 2, 88.23);
         ArrayList<User2> users = CollUtil.newArrayList(user1,user2);
         List<Integer> list = users.stream()
-                .mapToInt(user -> user.getWeight().intValue()).boxed().collect(Collectors.toList());
-        List<String> collect = users.stream().map(User2::getName).collect(Collectors.toList());
+                .mapToInt(user -> user.getWeight().intValue()).boxed().collect(toList());
+        List<String> collect = users.stream().map(User2::getName).collect(toList());
         Map<String, User2> collect1 = users.stream().collect(Collectors.toMap(User2::getName, v -> v));
 
         String string = users.stream().map(User2::getName).collect(Collectors.joining(",")).toString();
@@ -157,7 +159,7 @@ public class ListStreamTest {
         ArrayList<String> strings = CollUtil.newArrayList("one", "dasdf","two", "three");
 
         List<String> collect = strings.stream()
-                .map(String::toUpperCase).collect(Collectors.toList());
+                .map(String::toUpperCase).collect(toList());
         System.out.println(collect);
 
     }
@@ -175,6 +177,36 @@ public class ListStreamTest {
                 .map(String::toLowerCase)
                 .forEach(System.out::println);
 
+
+        List<String> collect = strings.stream().map(String::toUpperCase).collect(toList());
+
+    }
+
+    @Test
+    public void mapMultiTest(){
+        ArrayList<String> strings = CollUtil.newArrayList("one", "dasdf","two", "three");
+
+        strings.parallelStream()
+                .map(this::handle1)
+                .map(this::handle2)
+                .map(String::toLowerCase)
+                .forEach(System.out::println);
+
+    }
+
+    public  String handle1(String item) {
+        if (item.equals("one")) {
+            return "11111";
+        }
+        return item;
+    }
+
+    public  String handle2(String item) {
+        System.out.println("handle2----"+item);
+        if (item.equals("one")) {
+            return "1111122";
+        }
+        return item;
     }
 
 
